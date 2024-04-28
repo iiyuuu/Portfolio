@@ -12,41 +12,10 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+
+<?php include 'nav_menu.php'; ?>
+
 <body>
-    
-<!-- header section -->
-
-<header class="header">
-
-    <div id="menu-btn" class="fas fa-bars"></div>
-
-    <a href="#home" class="logo">Portfolio.</a>
-
-    <nav class="navbar">
-        <a href="#home" class="active">home</a>
-        <a href="#about">about</a>
-        <a href="#services">services</a>
-        <a href="#portfolio">portfolio</a>
-        <a href="#contact">contact</a>
-    </nav>
-
-    <!-- social media stuff -->
-    <div class="follow">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-github"></a>
-    </div>
-
-
-
-
-
-
-</header>
-
-<!-- header section end -->
 
 <!-- home section -->
 
@@ -57,46 +26,17 @@
 
     <div class="content">
         <h3>introduction message</h3>
-        <span>position</span>
+        <span>Data Analyst</span>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio culpa nemo reiciendis dolores consequatur numquam?</p>
         <a href="#about" class="btn">about me</a>
     </div>
 
-
-
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Home section end -->
 
 <!-- custom js file link -->
 <script src="js/script.js"></script>
-
 
 </body>
 </html>
