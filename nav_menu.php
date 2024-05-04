@@ -43,11 +43,8 @@
 
     <!-- social media stuff -->
     <div class="follow">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/nathan-nguyen-b3b662203/" class="fab fa-linkedin" target="_blank" rel="noreferrer noopener"></a>
+        <a href="https://github.com/Gubagoo-Nathan-Nguyen" class="fab fa-github" target="_blank" rel="noreferrer noopener"></a>
     </div>
 
 </header>

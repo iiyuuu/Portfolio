@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
+    --dark-cyan: #008B8B;
     --yellow: #ffcc0d;
     --black: #000;
     --white: #fff;
@@ -224,6 +225,60 @@ section{
 .about .biography .bio h3 span{
     font-weight: lighter;
 }
+
+.about .skills{
+    margin: 3rem 0;
+}
+
+.about .skills .progress{
+    margin-top: 1rem;
+}
+
+.about .skills .progress .bar{
+    display: flex;
+    margin: 1rem auto;
+    max-width: 70rem;
+    border: var(--border-bold);
+    justify-content: space-between;
+}
+
+.about .skills .progress .bar span.skill{
+    font-weight: bold;
+}
+
+.about .skills .progress .bar h3{
+    display: flex;
+    align-items: center;
+    justify-content: inherit;
+    background-color: var(--yellow);
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+/* Bar fill */
+
+.about .skills .progress .bar:nth-child(1) h3{
+    width: 90%;
+}
+
+.about .skills .progress .bar:nth-child(2) h3{
+    width: 90%;
+}
+
+.about .skills .progress .bar:nth-child(3) h3{
+    width: 20%;
+}
+
+.about .skills .progress .bar:nth-child(4) h3{
+    width: 5%;
+}
+
+.about .skills .progress .bar:nth-child(5) h3{
+    width: 5%;
+}
+
+
+
 
 
 

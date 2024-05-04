@@ -43,10 +43,11 @@
         <h1 class="heading"> <span>Skills</span></h1>
 
         <div class="progress">
-            <div class="bar"> 
-                <span>HTML</span>
-                <span>95%</span>
-            </div>
+            <div class="bar"> <h3><span class="skill">Python</span> </h3></div>
+            <div class="bar"> <h3><span class="skill">SQL</span> </h3></div>
+            <div class="bar"> <h3><span class="skill">PHP</span> </h3></div>
+            <div class="bar"> <h3><span class="skill">HTML</span> </h3></div>
+            <div class="bar"> <h3><span class="skill">CSS</span> </h3></div>
         </div>
 
     </div>
