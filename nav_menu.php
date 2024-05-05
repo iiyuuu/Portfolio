@@ -36,9 +36,7 @@
     <nav class="navbar">
         <a href="index.php" <?=activateLink('/index.php')?> >home</a>
         <a href="about.php" <?=activateLink('/about.php')?> >about</a>
-        <a href="#services">services</a>
-        <a href="#portfolio">portfolio</a>
-        <a href="#contact">contact</a>
+        <a href="contact.php" <?=activateLink('/contact.php')?> >contact</a>
     </nav>
 
     <!-- social media stuff -->

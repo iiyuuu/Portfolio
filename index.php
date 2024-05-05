@@ -28,7 +28,7 @@
         <h3>introduction message</h3>
         <span>Data Analyst</span>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio culpa nemo reiciendis dolores consequatur numquam?</p>
-        <a href="#about" class="btn">about me</a>
+        <a href="/about.php" class="btn" <?=activateLink('/index.php')?> >about me</a>
     </div>
 
 </section>

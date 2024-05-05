@@ -12,5 +12,5 @@ window.onscroll = () =>{
         menu.classList.remove('fa-times');
         header.classList.remove('active');
         document.body.classList.remove('active');
-    }
+    };
 }
