@@ -53,6 +53,9 @@ if(isset($_POST['send'])){
     <!-- font cdl link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <!-- aos css link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- custom css file link -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -61,8 +64,8 @@ if(isset($_POST['send'])){
 <?php include 'nav_menu.php'; ?>
 
 <?php 
-if(!$message){
-    foreach($messsage as $mes){
+if(isset($message)){
+    foreach($message as $mes){
         echo '<div class="message">
         <span>'.$mes.'</span>
         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
@@ -70,19 +73,6 @@ if(!$message){
     }
 }
 ?>
-
-array(1) { [0]=> string(20) "message sent already" } 
-Warning: Array to string conversion in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 65 
-Warning: Undefined variable $Array in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 65 
-Warning: Undefined variable $messsage in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 66 
-Warning: Undefined variable $ in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 66 
-Warning: foreach() argument must be of type array|object, null given in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 66 
-array(1) { [0]=> string(20) "message sent already" } 
-Warning: Array to string conversion in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 64 
-Warning: Undefined variable $Array in C:\Users\nnath\Downloads\Personal_Portfolio\contact.php on line 64 NULL
-
-
-
 
 <body>
 
@@ -95,7 +85,7 @@ Warning: Undefined variable $Array in C:\Users\nnath\Downloads\Personal_Portfoli
             <input type="text" name="name" placeholder="enter your name" class="box" required>
             <input type="email" name="email" placeholder="enter your email" class="box" required>
         </div>
-        <input type="number" min="0" name="number" placeholder="enter your number" class="box" required>
+        <input type="tel" id="phone" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="enter your number" class="box" required>
         <textarea name="message" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
         
         <input type="submit" value="send message" name="send" class="btn">
@@ -131,23 +121,12 @@ Warning: Undefined variable $Array in C:\Users\nnath\Downloads\Personal_Portfoli
 
 <div class="credit"> &copy; copyright  @<?php echo date('Y'); ?> by <span> [insert company name here]</span></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({
+    duration: 800,
+    delay: 300
+});</script>
 
 </body>
 </html>
