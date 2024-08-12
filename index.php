@@ -136,12 +136,12 @@
 
     <h1 class="heading"> <span>contact me</span></h1>
 
-    <form action="src/contact.php" method="post">
+    <form id="contact_form" method="post">
         <div class="flex">
             <input type="text" name="name" placeholder="Name e.g. John Smith" class="box" required>
             <input type="email" name="email" placeholder="Email" class="box" required>
         </div>
-        <input type="tel" id="phone" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" class="box" required>
+        <input type="tel" id="phone" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number (123-456-7890)" class="box" required>
         <textarea name="message" class="box" required placeholder="Please enter your message" cols="30" rows="10"></textarea>
         
         <input type="submit" value="send message" name="send" class="btn">
