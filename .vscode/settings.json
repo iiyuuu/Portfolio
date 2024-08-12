@@ -1,5 +1,20 @@
 {
   "php.debug.executablePath": "c:\\xampp\\php\\php.exe",
   "php.validate.executablePath": "c:\\xampp\\php\\php.exe",
-  "fiveServer.php.executable": "C:\\xampp\\php\\php.exe"
+  "fiveServer.php.executable": "C:\\xampp\\php\\php.exe",
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default",
+        "enableSsl": "Disabled"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "test",
+      "database": "test",
+      "username": "root"
+    }
+  ]
 }

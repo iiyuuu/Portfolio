@@ -442,19 +442,19 @@ body.dark-mode .about .edu-exp .row .box-container .box{
     margin: 1rem 0;
 }
 
-.contact form input::placeholder{
+.contact form input, .contact form input::placeholder, .contact form input:focus{
     color: var(--black);
 }
 
-body.dark-mode .contact form input::placeholder, input:focus{
+body.dark-mode .contact form input, body.dark-mode .contact form input::placeholder, body.dark-mode .contact form input:focus{
     color: var(--dark-mode-text);
 }
 
-.contact form textarea::placeholder{
+.contact form textarea, .contact form textarea::placeholder, .contact form textarea:focus{
     color: var(--black);
 }
 
-body.dark-mode .contact form textarea::placeholder, textarea:focus{
+body.dark-mode .contact form textarea, body.dark-mode .contact form textarea::placeholder, body.dark-mode .contact form textarea:focus{
     color: var(--dark-mode-text)
 ;}
 

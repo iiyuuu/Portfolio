@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
 <!-- Navbar Section -->
 
 <header class="header">
@@ -137,7 +136,7 @@
 
     <h1 class="heading"> <span>contact me</span></h1>
 
-    <form action="" method="post">
+    <form action="src/contact.php" method="post">
         <div class="flex">
             <input type="text" name="name" placeholder="Name e.g. John Smith" class="box" required>
             <input type="email" name="email" placeholder="Email" class="box" required>
@@ -170,12 +169,7 @@
 
     </div>
 
-
 </section>    
-
-
-<div class="credit"> &copy; copyright  @<?php echo date('Y'); ?> by <span> [insert company name here]</span></div>
-
 
 <!-- Contact section end -->
 
