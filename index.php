@@ -49,7 +49,6 @@
 
     <div class="content" data-aos="fade-up" data-aos-duration="1600">
         <h3>Nathan Nguyen</h3>
-        <!-- TODO: add location icon + location text -->
     </div>
 
 </section>
@@ -65,26 +64,25 @@
     <div class="biography">
         <div class="bio"data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-once="true">
             <h3> <span> preferred name : </span> Nathan Nguyen </h3> 
-            <h3> <span> email : </span> nathan.nguyen9957@gmail.com </h3> 
-            <h3> <span> phone : </span> 346-702-9329 </h3>   
+            <h3> <i class="fa-solid fa-envelope"></i> nathan.nguyen9957@gmail.com </h3> 
+            <h3> <i class="fa-solid fa-phone"></i> 346-702-9329 </h3>   
+            <h3> <i class="fa-solid fa-location-dot"></i> </span> Houston, TX </h3>   
         </div>
 
-        <!-- TODO: Add experience and past projects section -->
-
-        <!-- TODO: Add download link to resume -->
         <a href="/documents/toppers_schedule.txt" class="btn" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-once="true" download> Download Resume</a>
 
     </div>
 
     <div class="skills">
 
-        <h1 class="heading" data-aos="fade-down" data-aos-anchor-placement="center-bottom" data-aos-once="true"> <span>Skills</span></h1>
+        <h1 class="heading" data-aos="fade-down" data-aos-anchor-placement="center-bottom" data-aos-once="true"> <span>Skills and Technologies</span></h1>
 
         <div class="progress">
             <div class="bar" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">Python</span> </h3></div>
             <div class="bar" data-aos="fade-left" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">Clickhouse</span> </h3></div>
             <div class="bar" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">MYSQL</span> </h3></div>
             <div class="bar" data-aos="fade-left" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">PHP</span> </h3></div>
+            <div class="bar" data-aos="fade-left" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">JS React</span> </h3></div>
             <div class="bar" data-aos="fade-right" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">HTML</span> </h3></div>
             <div class="bar" data-aos="fade-left" data-aos-once="true" data-aos-anchor-placement="center-bottom"> <h3><span class="skill">CSS</span> </h3></div>
         </div>
@@ -141,11 +139,11 @@
 
     <form action="" method="post">
         <div class="flex">
-            <input type="text" name="name" placeholder="enter your name" class="box" required>
-            <input type="email" name="email" placeholder="enter your email" class="box" required>
+            <input type="text" name="name" placeholder="Name e.g. John Smith" class="box" required>
+            <input type="email" name="email" placeholder="Email" class="box" required>
         </div>
-        <input type="tel" id="phone" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="enter your number" class="box" required>
-        <textarea name="message" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
+        <input type="tel" id="phone" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Phone Number" class="box" required>
+        <textarea name="message" class="box" required placeholder="Please enter your message" cols="30" rows="10"></textarea>
         
         <input type="submit" value="send message" name="send" class="btn">
     </form>
@@ -155,22 +153,20 @@
         <div class="box">
             <i class="fas fa-phone"></i>
             <h3>phone</h3>
-            <p>+123-456-7890</p>
+            <p>346-702-9329</p>
         </div>
 
         <div class="box">
             <i class="fas fa-envelope"></i>
             <h3>email</h3>
-            <p>name@domain.com</p>
+            <p>nathan.nguyen9957@gmail.com</p>
         </div>
 
         <div class="box">
             <i class="fas fa-map-marker-alt"></i>
-            <h3>address</h3>
-            <p>[insert address here]</p>
+            <h3>Location</h3>
+            <p>Houston, TX</p>
         </div>
-
-
 
     </div>
 
@@ -184,7 +180,7 @@
 <!-- Contact section end -->
 
 <!-- custom js file link -->
-<script src="js/script.js" type="module"></script>
+<script src="js/main.js" type="module"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({

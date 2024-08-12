@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
 
 :root{
-    --dark-cyan: #008B8B;
-    --yellow: #ffcc0d;
+    --accent: #00aaaa;
     --black: #000;
     --white: #fff;
     --light-bg: #eee;
     --dark-bg: #3b3b3b;
     --contrast-dark-bg: #525252;
+    --light-grey: #727272;
+    --dark-mode-border-color: #cececec2;
+    --dark-mode-text: #e0e0e0;
     --border-bold: .5rem solid var(--black);
     --border-light: .2rem solid var(--black);
-    --border-bold-dark: .5rem solid var(--white);
-    --border-dark: .2rem solid var(--white);
+    --border-bold-dark: .5rem solid var(--dark-mode-border-color);
+    --border-dark: .2rem solid var(--dark-mode-border-color);
 }
 
 *{
@@ -21,12 +23,11 @@
     outline: none; border: none;
     text-decoration: none;
     text-transform: capitalize;
-    color:var(--black);
 }
 
 *::selection{
     background-color: var(--black);
-    color: var(--dark-cyan);
+    color: var(--accent);
 }
 
 *::-webkit-scrollbar{
@@ -39,7 +40,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-    background-color: var(--dark-cyan);
+    background-color: var(--accent);
 }
 
 html{
@@ -53,13 +54,6 @@ body{
     background-color: var(--light-bg);
     color: black;
     border: var(--border-light);
-    /* overflow: hidden;
-    transition: .2s linear !important; */
-}
-
-.dark-mode{
-    background-color: var(--dark-bg);
-    border: var(--border-dark);
 }
 
 section{
@@ -69,47 +63,28 @@ section{
     text-align: center;
 }
 
+.dark-mode{
+    background-color: var(--dark-bg);
+    border: var(--border-dark);
+}
+
 
 .heading{
     margin-bottom: 3rem;
     text-align: center;
 }
 
+body.dark-mode .heading span{
+    border-bottom: var(--border-dark);
+    color: var(--dark-mode-text);
+}
+
 .heading span{
     text-transform: uppercase;
     font-size: 6.5rem;
     border-bottom: var(--border-bold);
+    color: var(--black);
 }
-
-.message{
-    position: sticky;
-    top: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--dark-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    font-size: 2rem;
-}
-
-.message i{
-    cursor: pointer;
-}
-
-.message{
-    position: sticky;
-    top: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--dark-cyan);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-}
-
 
 .btn{
     display: inline-block;
@@ -123,6 +98,17 @@ section{
 .btn:hover{
     background-color: var(--black);
     color: var(--white);
+}
+
+body.dark-mode .btn{
+    background-color: var(--dark-bg);
+    color: var(--dark-mode-text);
+    border: var(--border-dark);
+}
+
+body.dark-mode .btn:hover{
+    background-color: var(--light-bg);
+    color: var(--black);
 }
 
 .header{
@@ -139,8 +125,8 @@ section{
     z-index: 999;
 }
 
-.header .dark-mode{
-    border-right: var(--border-bold-dark);
+body.dark-mode .header{
+    border-right: var(--border-bold);
     background-color: var(--contrast-dark-bg);
 }
 
@@ -152,6 +138,11 @@ section{
     display: block;
 }
 
+body.dark-mode .header .logo{
+    color: var(--dark-mode-text);
+    border-bottom: var(--border-bold-dark);
+}
+
 .header .dark_mode_toggle{
     width: 20rem;
     font-size: 5rem;
@@ -159,22 +150,24 @@ section{
     border: 5px solid black;
     border-radius: 1rem;
     margin-top: 10px;
-    background-color: var(--light-bg);
-    color: var(--black);
     position: relattive;
+    background-color: var(--light-bg);
 }
 
 .header .dark_mode_toggle:hover{
-    background-color: var(--contrast-dark-bg);
-    color: var(--white);
+    background-color: var(--dark-bg);
+    color:white;
 }
 
-.header .dark_mode_toggle:hover i{
-    color: var(--white);
+body.dark-mode .header .dark_mode_toggle{
+    border: var(--border-bold-dark);
+    background-color: var(--dark-bg);
+    color: var(--dark-mode-text);
 }
 
-.header .dark_mode_toggle .dark-mode{
-    background-color: var(--light-bg);
+body.dark-mode .header .dark_mode_toggle:hover{
+    background-color: var(--dark-mode-text);
+    color:black;
 }
 
 .header .side_menu{
@@ -188,23 +181,34 @@ section{
     font-size: 2.5rem;
     padding: 1.5rem;
     margin: .5rem;
+    color: var(--black);
+}
+
+body.dark-mode .header .side_menu a{
+    color: var(--dark-mode-text);
 }
 
 .header .side_menu a:hover{
-    background-color: grey;
+    color: var(--white);
+    background-color: var(--dark-bg);
 }
 
 .header .side_menu a.active{
-    background-color: var(--dark-cyan);
+    background-color: var(--accent);
+}
+
+body.dark-mode .header .side_menu a.active{
+    background-color: var(--accent);
+    color: var(--black);
 }
 
 .header .follow{
-    position: absolute;
     bottom: 0;
-    transform: translate(125%, 0)
+    margin: auto;
 }
 
 .header .follow a{
+    color: var(--black);
     font-size: 3rem;
     margin: 1rem .5rem;
     cursor: pointer;
@@ -215,17 +219,9 @@ section{
     transform: scale(1.5, 1.5);
 }
 
-/* #menu-btn{
-    position: absolute;
-    top:0; right:-5.5rem;
-    height: 4.5rem;
-    line-height: 4.5rem;
-    width: 5rem;
-    font-size: 2.5rem;
-    cursor: pointer;
-    background-color: var(--black);
+body.dark-mode .header .follow a{
     color: var(--white);
-} */
+}
 
 .home{
     display: flex;
@@ -241,7 +237,11 @@ section{
 .home .image img{
     height: 65rem;
     padding: 1rem;
-    border: var(--border-bold)
+    border: var(--border-bold);
+}
+
+body.dark-mode .home .image img{
+    border: var(--border-bold-dark);
 }
 
 .home .content{
@@ -252,31 +252,14 @@ section{
     text-transform: uppercase;
     font-size: 5rem;
     margin-bottom: .5rem;
-    border: var(--border-bold);
     padding: 2rem;
+    border: var(--border-bold);
+    color: var(--black);
 }
 
-/* .home .content span{
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: var(--dark-cyan);
-    font-size: 2.5rem;
-    margin: 1rem 0;
-} */
-
-.home .content p{
-    text-transform: none;
-    font-size: 1.75rem;
-    line-height: 2;
-    padding: 1rem 0;
-}
-
-.about .biography p{
-    text-transform: none;
-    margin: 2rem auto;
-    max-width: 70rem;
-    line-height: 2;
-    font-size: 1.7rem;
+body.dark-mode .home .content h3{
+    border: var(--border-bold-dark);
+    color: var(--dark-mode-text);
 }
 
 .about .biography .bio{
@@ -292,10 +275,36 @@ section{
     font-size: 2.5rem;
     font-weight: normal;
     text-transform: none;
+    color: var(--black);
+}
+
+body.dark-mode .about .biography .bio h3{
+    border: var(--border-dark);
+    color: var(--dark-mode-text);
 }
 
 .about .biography .bio h3 span{
     font-weight: lighter;
+}
+
+.about .biography a{
+    background-color: var(--light-bg);
+    color: var(--black);
+}
+
+.about .biography a:hover{
+    background-color: var(--black);
+    color: var(--light-bg);
+}
+
+body.dark-mode .about .biography a{
+    background-color: var(--dark-bg);
+    color: var(--dark-mode-text);
+}
+
+body.dark-mode .about .biography a:hover{
+    background-color: var(--dark-mode-border-color);
+    color: var(--black);
 }
 
 .about .skills{
@@ -314,15 +323,24 @@ section{
     justify-content: space-between;
 }
 
+body.dark-mode .about .skills .progress .bar{
+    border: var(--border-bold-dark);
+}
+
 .about .skills .progress .bar span.skill{
     font-weight: bold;
+    color: var(--black);
+}
+
+body.dark-mode .about .skills .progress .bar span.skill{
+    color: var(--dark-bg);
 }
 
 .about .skills .progress .bar h3{
     display: flex;
     align-items: center;
     justify-content: inherit;
-    background-color: var(--dark-cyan);
+    background-color: var(--accent);
     font-size: 2rem;
     padding: 2rem;
 }
@@ -342,15 +360,19 @@ section{
 }
 
 .about .skills .progress .bar:nth-child(4) h3{
-    width: 20%;
+    width: 50%;
 }
 
 .about .skills .progress .bar:nth-child(5) h3{
-    width: 5%;
+    width: 50%;
 }
 
 .about .skills .progress .bar:nth-child(6) h3{
-    width: 5%;
+    width: 25%;
+}
+
+.about .skills .progress .bar:nth-child(7) h3{
+    width: 25%;
 }
 
 .about .edu-exp .row{
@@ -366,7 +388,12 @@ section{
 .about .edu-exp .row .box-container .title{
     padding: 1.5rem;
     font-size: 2.5rem;
-    background-color: var(--dark-cyan);
+    background-color: var(--accent);
+    color: var(--black);
+}
+
+body.dark-mode .about .edu-exp .row .box-container .title{
+    color: var(--dark-bg);
 }
 
 
@@ -375,6 +402,12 @@ section{
     margin: 1.5rem 0;
     background-color: var(--light-bg);
     padding: 2rem;
+    color: var(--black);
+}
+
+body.dark-mode .about .edu-exp .row .box-container .box{
+    background-color: var(--dark-bg);
+    color: var(--dark-mode-text);
 }
 
 .about .edu-exp .row .box-container .box span{
@@ -405,7 +438,29 @@ section{
     font-size: 2rem;
     text-transform: none;
     border: var(--border-light);
+    background-color: var(--light-bg);
     margin: 1rem 0;
+}
+
+.contact form input::placeholder{
+    color: var(--black);
+}
+
+body.dark-mode .contact form input::placeholder, input:focus{
+    color: var(--dark-mode-text);
+}
+
+.contact form textarea::placeholder{
+    color: var(--black);
+}
+
+body.dark-mode .contact form textarea::placeholder, textarea:focus{
+    color: var(--dark-mode-text)
+;}
+
+body.dark-mode .contact form .box{
+    border: var(--border-dark);
+    background-color: var(--dark-bg);
 }
 
 .contact form textarea{
@@ -429,12 +484,22 @@ section{
     gap: 1.5rem;
     align-items: flex-start;
     margin-top: 3rem;
+    color: var(--black);
+}
+
+body.dark-mode .contact .box-container{
+    color: var(--dark-mode-text);
 }
 
 .contact .box-container .box{
     padding: 3rem 2rem;
     border: var(--border-light);
     background-color: var(--light-bg);
+}
+
+body.dark-mode .contact .box-container .box{
+    border: var(--border-dark);
+    background-color: var(--dark-bg);
 }
 
 .contact .box-container .box i{
@@ -445,6 +510,11 @@ section{
     color: var(--white);
     background-color: var(--black);
     margin-bottom: .5rem;
+}
+
+body.dark-mode .contact .box-container .box i{
+    color: var(--black);
+    background-color: var(--light-bg);
 }
 
 
@@ -458,6 +528,23 @@ section{
     text-transform: none;
 }
 
+/* .message{
+    position: sticky;
+    top: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.message i{
+    cursor: pointer;
+} */
+
 
 .credit{
     text-align: center;
@@ -468,7 +555,7 @@ section{
 }
 
 .credit span{
-    color: var(--dark-cyan);
+    color: var(--accent);
 }
 
 
