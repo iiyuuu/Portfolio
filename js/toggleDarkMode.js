@@ -1,4 +1,6 @@
-const toggleDarkMode = () => {
+import { getSunMoonIcon } from "./darkModeIcon.js";
+
+export function toggleDarkMode(){
     const body = document.querySelector("body");
     if (!body.classList.contains("dark-mode")){
         body.classList.add("dark-mode");
@@ -7,4 +9,4 @@ const toggleDarkMode = () => {
         body.classList.toggle("dark-mode");
     }
     getSunMoonIcon();
-}
+};

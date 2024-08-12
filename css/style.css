@@ -161,6 +161,7 @@ section{
     margin-top: 10px;
     background-color: var(--light-bg);
     color: var(--black);
+    position: relattive;
 }
 
 .header .dark_mode_toggle:hover{
@@ -198,8 +199,9 @@ section{
 }
 
 .header .follow{
-    position: relative;
+    position: absolute;
     bottom: 0;
+    transform: translate(125%, 0)
 }
 
 .header .follow a{

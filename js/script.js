@@ -1,4 +1,5 @@
-import getSunMoonIcon from 'darkModeIcon.js';
+import { getSunMoonIcon } from "./darkModeIcon.js";
+import { toggleDarkMode } from "./toggleDarkMode.js";
 
 let about_section = document.querySelector('#about');
 let contact_section = document.querySelector('#contact');
@@ -18,6 +19,9 @@ const removeOtherHighlights = (class_id) => {
 window.onload = () => {
     removeOtherHighlights('index_navbar');
     document.getElementById('index_navbar').classList.add('active');
+    Array.from(document.getElementsByClassName("dark_mode_toggle")).forEach(function(element) {
+        element.addEventListener("click", toggleDarkMode, false);
+    })
     getSunMoonIcon();
 }
 

@@ -24,7 +24,7 @@
 
     <a class="logo">Portfolio</a>
 
-    <button class="dark_mode_toggle" onclick="toggleDarMode()"></button>
+    <button class="dark_mode_toggle"><i></i></button>
 
     <nav class="side_menu">
         <a id="index_navbar" class="active" href="#home">home</a>
@@ -184,8 +184,7 @@
 <!-- Contact section end -->
 
 <!-- custom js file link -->
-<script src="js/script.js"></script>
-<script src="js/windowConfig.js"></script>
+<script src="js/script.js" type="module"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({
