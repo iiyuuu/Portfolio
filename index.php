@@ -14,6 +14,8 @@
     <!-- custom css file link -->
     <link rel="stylesheet" href="css/style.css">
 
+    <meta name="snackbar_message" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -98,15 +100,27 @@
                 <h3 class="title">experience</h3>
 
                 <div class="box">
-                    <span>( 2023 - present )</span>
-                    <h3>Data Analyst</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non adipisci debitis doloribus repellat, eligendi itaque?</p>
+                    <span>2023 - present</span>
+                    <h3>Data Analyst - Reynolds and Reynolds</h3>
+                    <ul>
+                        <li>Used SQL to provide data for APIs and generate reports to send to internal users</li>
+                        <li>Designed a table solution to provide an executive churn report that is delivered monthly</li>
+                        <li>Migrated 20 reports with a team from legacy to current infrastructure which uses python</li>
+                        <li>Worked with devops to resolve issues in the data that caused records to fail to insert into tables</li>
+                        <li>Worked on the data and visualization of 4 dashboards with several panels each</li>
+                        <li>Created developer onboarding documentation and provided instructions on how to setup a local environment</li>
+                        <li>Consolidated utility files within codebase and added documentation for easier querying</li>
+                    </ul>
                 </div>
 
                 <div class="box">
-                    <span>( 2024 - present )</span>
-                    <h3>Full Stack Software Developer</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non adipisci debitis doloribus repellat, eligendi itaque?</p>
+                    <span>2024 - present</span>
+                    <h3>Software Developer - Reynolds and Reynolds</h3>
+                    <ul>
+                        <li>Worked in full stack for a report management application used by internal users</li>
+                        <li>Created an API in php that gathers data, caches it on redis, and displays it on the frontend</li>
+                        <li>Added dropdowns, multiselects, and extra displays on the FE for the report management application using javascript</li>
+                    </ul>
                 </div>
             
             </div>
@@ -116,11 +130,10 @@
                 <h3 class="title">education</h3>
 
                 <div class="box">
-                    <span>( 2018 - 2022 )</span>
+                    <span>2018 - 2022</span>
                     <h3>University of Houston</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non adipisci debitis doloribus repellat, eligendi itaque?</p>
+                    <p>Acquired a Bachelor of Science in Computer Science from University of Houston in Fall 2022</p>
                 </div>
-
             </div>
         </div>
     </div>
@@ -171,15 +184,18 @@
 
 </section>    
 
+<div class="snackbar" id="snackbar"></div>
+
 <!-- Contact section end -->
 
 <!-- custom js file link -->
 <script src="js/main.js" type="module"></script>
+<script src="js/handleFormSubmit.js" type="module"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>AOS.init({
-    duration: 800,
-    delay: 300
+    duration: 350,
+    delay: 100
 });</script>
 
 </body>

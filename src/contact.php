@@ -1,17 +1,25 @@
 <?php
 
+function preparedQuery($connection, $query, $params, $types){
+    $types = $types ?: str_repeat("s", count($params));
+    $statement = $connection->prepare($query);
+    $statement->bind_param($types, ...$params);
+    $statement->execute() or die('query failed');
+    return $statement;
+}
+
 function messageExists($connection, $name, $email, $number, $msg){
     $query = "SELECT * 
     FROM test.contact_form 
-        WHERE name = '" . $name . "' 
-        AND email = '" . $email . "'
-        AND phone_number = '". $number . "'
-        AND message = '" . $msg ."'" ;
+        WHERE name = ?
+        AND email = ?
+        AND phone_number = ?
+        AND message = ?" ;
 
     $id = '';
 
-    $select_message = $connection->prepare($query);
-    $select_message->execute() or die('query failed');
+    $select_message = preparedQuery($connection, $query, [$name, $email, $number, $msg], 'ssss');
+
     $select_message->store_result();
     $select_message->bind_result($id, $name, $email, $number, $msg);
     $select_message->fetch();
@@ -22,7 +30,9 @@ function messageExists($connection, $name, $email, $number, $msg){
 }
 
 function uploadMessage($connection){
-    if(!$_SERVER["REQUEST_METHOD"] == "POST"){
+    if($_SERVER["REQUEST_METHOD"] !== "POST"){
+        http_response_code(405);
+        $response = json_encode(array('message' => 'Error: Method not allowed'));
         return;
     }
     
@@ -30,23 +40,24 @@ function uploadMessage($connection){
     $email = mysqli_real_escape_string($connection, $_POST['email']);
     $number = mysqli_real_escape_string($connection, str_replace('-', '', $_POST['number']));
     $msg = mysqli_real_escape_string($connection, $_POST['message']);
+    $message = '';
     
     if(messageExists($connection, $name, $email, $number, $msg)){
-        $message = 'message sent already';    
+        http_response_code(202);
+        $message = 'message sent already';   
     }
     else{
-        $query = $connection->prepare("
+        $query = "
         INSERT INTO 
             test.contact_form (name, email, phone_number, message) 
-        VALUES('" . $name . "', '" . $email . "', '" . $number . "', '" . $msg . "')");
-        $query->execute() or die('query failed');
-        $query->close();
-        $message = 'message sent successfully'; 
+        VALUES(?, ?, ?, ?)";
+        preparedQuery($connection, $query, [$name, $email, $number, $msg], 'ssss');
+        $message = 'message sent successfully';    
+        http_response_code(202); 
     }
 
-    if(isset($message)){
-        $_SESSION['snackbar_message'] = $message;
-    }
+    $response = json_encode(array('message' => $message));
+    return $response;
 }
 
 function process(){
@@ -54,7 +65,8 @@ function process(){
     $conn = mysqli_connect('127.0.0.1', 'root', 'g3JRvSxr_=iqqzD', 'test') or die('connection failed');
     $conn->set_charset('utf8mb4');
 
-    uploadMessage($conn);
+    $response = uploadMessage($conn);
+    echo $response;
 }
 
 process();

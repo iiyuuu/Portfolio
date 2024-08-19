@@ -14,6 +14,8 @@
     --border-light: .2rem solid var(--black);
     --border-bold-dark: .5rem solid var(--dark-mode-border-color);
     --border-dark: .2rem solid var(--dark-mode-border-color);
+    --success: rgb(0, 155, 0);
+    --error: rgb(151, 0, 0);
 }
 
 *{
@@ -54,6 +56,9 @@ body{
     background-color: var(--light-bg);
     color: black;
     border: var(--border-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 section{
@@ -377,7 +382,8 @@ body.dark-mode .about .skills .progress .bar span.skill{
 
 .about .edu-exp .row{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     gap: 1.5rem;
 }
 
@@ -400,25 +406,31 @@ body.dark-mode .about .edu-exp .row .box-container .title{
 .about .edu-exp .row .box-container .box{
     text-align: left;
     margin: 1.5rem 0;
-    background-color: var(--light-bg);
-    padding: 2rem;
+    border: var(--border-light);
+    padding: 3rem;
     color: var(--black);
 }
 
 body.dark-mode .about .edu-exp .row .box-container .box{
-    background-color: var(--dark-bg);
+    border: var(--border-dark);
     color: var(--dark-mode-text);
 }
 
 .about .edu-exp .row .box-container .box span{
     font-size: 1.5rem;
+    font-style: italic;
 }
 
 .about .edu-exp .row .box-container .box h3{
     font-size: 2.5rem;
-    font-weight: normal;
-    margin-top: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
+}
+
+.about .edu-exp .row .box-container .box li{
+    line-height: 1.5;
+    font-size: 1.7rem;
 }
 
 .about .edu-exp .row .box-container .box p{
@@ -545,25 +557,42 @@ body.dark-mode .contact .box-container .box i{
     cursor: pointer;
 } */
 
-
-.credit{
+.snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    color: var(--dark-mode-text);
     text-align: center;
-    background-color: var(--black);
-    padding: 3rem;
-    font-size: 2rem;
-    color: var(--white);
+    position: fixed;
+    border-radius: 2px;
+    padding: 16px;
+    font-size: 1.5rem;
+    
+    left: 60%;
+    transform: translateX(-50%);
+    bottom: 30px;
 }
 
-.credit span{
-    color: var(--accent);
+.show {
+    background-color: var(--success);
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+.error{
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    background-color: var(--error);
+}
 
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
 
-
-
-
-
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
 
 
 
